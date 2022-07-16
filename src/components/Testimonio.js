@@ -1,18 +1,18 @@
 import React from 'react';
-import Pablito from '../imagenes/testimonio-pablito.JPG';
+
 import '../hojas-de-estilo/Testimonio.css';
-const Testimonio = () => {
+const Testimonio = (props) => {
   return (
     <div className='contenedor-testimonio'>
         <img 
             className = 'imagen-testimonio' 
-            src={Pablito} 
+            src={require(`../imagenes/testimonio-${props.imagen}.JPG`)} 
             alt="testimonio" 
         />
         <div className='contenedor-texto-testimonio'>
-            <p className='nombre-testimonio'>Pablito siempre un amigo</p>
-            <p className='cargo-testimonio'>Capo de capos</p>
-            <p className='texto-testimonio'>i temporibus odio officia aspernatur totam autem! Explicabo nihil pariatur optio dolore blanditiis modi obcaecati facilis ipsam. </p>
+            <p className='nombre-testimonio'>{props.nombre} en {props.pais}</p>
+            <p className='cargo-testimonio'>{props.cargo} en {props.empresa}</p>
+            <p className='texto-testimonio'>{props.testimonio} </p>
         </div>
     </div>
   )
